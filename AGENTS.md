@@ -2,13 +2,21 @@
 
 ## Cursor Cloud specific instructions
 
-This repository is currently an empty scaffold with only `README.md` and `LICENSE`. There is no application code, no dependency manifests, no build system, and no services to run.
+Node.js/TypeScript Express project. Node v22 via nvm, npm as package manager.
 
-- **No dependencies to install** — no `package.json`, `requirements.txt`, `pyproject.toml`, `go.mod`, `Cargo.toml`, or similar.
-- **No lint/test/build/run commands** — there is no source code to lint, test, build, or run.
-- **No services** — there is nothing to start or connect to.
+### Quick reference
 
-When application code is added to this repository, update this file with:
-1. How to install dependencies.
-2. How to lint, test, build, and run the application.
-3. Any non-obvious caveats discovered during development.
+| Action  | Command        |
+|---------|----------------|
+| Install | `npm install`  |
+| Dev     | `npm run dev`  |
+| Build   | `npm run build`|
+| Lint    | `npm run lint` |
+| Test    | `npm test`     |
+
+### Notes
+
+- Dev server (`npm run dev`) uses `tsx watch` for hot-reload on port 3000 (override with `PORT` env var).
+- Build (`npm run build`) compiles TypeScript to `dist/` via `tsc`.
+- Lint uses ESLint 9 flat config (`eslint.config.mjs`) with `typescript-eslint`.
+- Tests use Jest with `ts-jest` preset; test files live alongside source as `*.test.ts`.
